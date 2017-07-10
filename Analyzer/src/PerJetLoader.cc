@@ -284,7 +284,7 @@ void PerJetLoader::setupTree(TTree *iTree, std::string iJetLabel) {
     std::stringstream bname;
     bname << iJetLabel << "_" << iter.first;
     std::stringstream bname2;
-    bname2 << bname.str() << "[n_cpf]/F";
+    bname2 << bname.str() << "[" << NCPF << "]/F";
     fTree->Branch(bname.str().c_str(), (iter.second), bname2.str().c_str());
   }
   fTree->Branch("n_ipf",&fN_ipf,"n_ipf/I");
@@ -292,7 +292,7 @@ void PerJetLoader::setupTree(TTree *iTree, std::string iJetLabel) {
     std::stringstream bname;
     bname << iJetLabel << "_" << iter.first;
     std::stringstream bname2;
-    bname2 << bname.str() << "[n_ipf]/F";
+    bname2 << bname.str() << "[" << NIPF << "]/F";
     fTree->Branch(bname.str().c_str(), (iter.second), bname2.str().c_str());
   }
   fTree->Branch("n_sv",&fN_sv,"n_sv/F");
@@ -300,7 +300,7 @@ void PerJetLoader::setupTree(TTree *iTree, std::string iJetLabel) {
     std::stringstream bname;
     bname << iJetLabel << "_" << iter.first;
     std::stringstream bname2;
-    bname2 << bname.str() << "[n_sv]/I";
+    bname2 << bname.str() << "[" << NSV << "]/I";
     fTree->Branch(bname.str().c_str(), (iter.second), bname2.str().c_str());
   }
 
